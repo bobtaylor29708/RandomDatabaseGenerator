@@ -37,7 +37,7 @@ SQL script if you choose to write that as well
 
 ```Csharp 
 <!-- Set this to a location were you would like the Generated SQL Script and log files to be written -->
-<add key="ScriptFolderPath" value="C:\temp\"/>	
+<add key="ScriptFolderPath" value="C:\temp\"/>
 ```
 
 And finally you can turn on or turn off the SQL Script generation. It is on by default.
