@@ -47,4 +47,5 @@ This way you can generate the file and use it on multiple systems.
 <!-- Set this to true to write the SQL Statements to create the tables and insert the data -->
 <add key="CreateSQLScript" value="true"/>
 ```
-  
+That's it!
+
