@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Database Generator</title>
+</head>
+<body>
+
+    <h1 id="random-database-generator">Random Database Generator</h1>
+<h3 id="purpose">Purpose</h3>
+<p>Random database generator is a command line utility that will generate a database with a
+random number of tables, each table having a random number of columns and a random number
+of rows per column.</p>
+<h2 id="setup-the-destination-database">Setup the destination database</h2>
+<p>Make sure you set the DataSource if you are not using localhost (default instance)</p>
+<pre><code class="language-Csharp">  &lt;connectionStrings&gt;
+    &lt;!-- Be sure to set the SQL Instance below if not using the localhost--&gt;
+    &lt;add name=&quot;Destination&quot; providerName=&quot;Sql&quot; connectionString=&quot;Data Source=localhost;Initial Catalog=master;Integrated Security=SSPI;&quot;/&gt;
+  &lt;/connectionStrings&gt;
+</code></pre>
+<p>Additional configuration items you should set:</p>
+<pre><code class="language-Csharp">&lt;!-- Set this to name the database you are creating --&gt;
+&lt;add key=&quot;DatabaseName&quot; value=&quot;RandomDB&quot;/&gt; 
+</code></pre>
+<p>Here is where you specify the number of tables, and the limits for number of columns
+per table and number of rows per table</p>
+<pre><code class="language-Csharp">&lt;add key=&quot;NumberOfTablesToCreate&quot; value=&quot;10&quot;/&gt;
+&lt;!-- Set this to the maximum number of columns per table (randomly generated per table) --&gt;
+&lt;add key=&quot;MaxNumberOfColumnsPerTable&quot; value=&quot;20&quot;/&gt;
+&lt;!-- Set this to the maximum number of rows per table (randomly generated per table) --&gt;
+&lt;add key=&quot;MaxNumberOfRowsPerTable&quot; value =&quot;10&quot;/&gt;
+</code></pre>
+<p>This entry allows you to set a folder where activity.log gets written as well as the
+SQL script if you choose to write that as well</p>
+<pre><code class="language-Csharp">&lt;!-- Set this to a location were you would like the Generated SQL Script and log files to be written --&gt;
+&lt;add key=&quot;ScriptFolderPath&quot; value=&quot;C:\temp\&quot;/&gt;
+</code></pre>
+<p>And finally you can turn on or turn off the SQL Script generation. It is on by default.
+This way you can generate the file and use it on multiple systems.</p>
+<pre><code class="language-Csharp">&lt;!-- Set this to true to write the SQL Statements to create the tables and insert the data --&gt;
+&lt;add key=&quot;CreateSQLScript&quot; value=&quot;true&quot;/&gt;
+</code></pre>
+
+
+</body>
+</html>
